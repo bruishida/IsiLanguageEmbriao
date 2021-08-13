@@ -10,6 +10,7 @@ String  t1;
 String  t2;
 a= _key.nextDouble();
 b= _key.nextDouble();
+t1 = "text";
 a = 1+2*3/b;
 a = 5;
 while (a<10) {

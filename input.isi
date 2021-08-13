@@ -8,6 +8,8 @@ numero d;
 leia(a);
 leia(b);
 
+t1="text";
+
 
 a = 1 + 2 * 3 / b;
 
