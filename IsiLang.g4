@@ -256,8 +256,6 @@ expr		:  termo (
 	            )*
 	            {
 	            	if(isOpEsp) {
-	            		System.out.println("-----------------------");
-	            		System.out.println(_exprContent);
 	            		CommandOpEsp cmd = new CommandOpEsp(_exprContent);
                     	_exprContent = cmd.generateJavaCode();
 	            	}

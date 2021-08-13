@@ -16,6 +16,8 @@ import br.com.professorisidro.isilanguage.parser.IsiLangParser;
 public class MainClass {
 	public static void main(String[] args) {
 		try {
+			long start = System.currentTimeMillis();
+			// some time passes
 			IsiLangLexer lexer;
 			IsiLangParser parser;
 			
@@ -30,7 +32,9 @@ public class MainClass {
 			
 			parser.prog();
 			
-			System.out.println("Compilation Successful");
+			long end = System.currentTimeMillis();
+			long elapsedTime = end - start;
+			System.out.println("Compilation Successful, Compile Time: " +elapsedTime+ "ms");
 			
 			parser.exibeComandos();
 			
