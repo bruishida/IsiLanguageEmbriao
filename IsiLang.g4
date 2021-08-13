@@ -146,9 +146,13 @@ cmdleitura	: 'leia' AP
 			
 cmdescrita	: 'escreva' 
                  AP 
-                 ID { verificaID(_input.LT(-1).getText());
+                 (
+                 	ID { verificaID(_input.LT(-1).getText());
 	                  _writeID = _input.LT(-1).getText();
                      } 
+                   |NUMBER {_writeID = _input.LT(-1).getText();} 
+                   |TEXT {_writeID = _input.LT(-1).getText();} 
+                 )
                  FP 
                  SC
                {
@@ -172,7 +176,7 @@ cmdattrib	:  ID { verificaID(_input.LT(-1).getText());
 cmdenquanto	: 'enquanto' AP
 		                    ID    { _exprWhile = _input.LT(-1).getText(); }
 		                    OPREL { _exprWhile += _input.LT(-1).getText(); }
-		                    (ID | NUMBER) { _exprWhile += _input.LT(-1).getText(); }
+		                    (ID | NUMBER | TEXT) { _exprWhile += _input.LT(-1).getText(); }
 		                    FP 
 		                    ACH 
 		                    { curThread = new ArrayList<AbstractCommand>(); 
@@ -215,7 +219,7 @@ cmdpara : 'para' 	AP
 cmdselecao  :  'se' AP
                     ID    { _exprDecision = _input.LT(-1).getText(); }
                     OPREL { _exprDecision += _input.LT(-1).getText(); }
-                    (ID | NUMBER) {_exprDecision += _input.LT(-1).getText(); }
+                    (ID | NUMBER | TEXT) {_exprDecision += _input.LT(-1).getText(); }
                     FP 
                     ACH 
                     { curThread = new ArrayList<AbstractCommand>(); 
@@ -260,6 +264,7 @@ expr		:  termo (
                     	_exprContent = cmd.generateJavaCode();
 	            	}
 	            }
+	            | TEXT { _exprContent += _input.LT(-1).getText();}
 			; 
 			
 termo		: ID { verificaID(_input.LT(-1).getText());
@@ -314,5 +319,8 @@ ID	: [a-z] ([a-z] | [A-Z] | [0-9])*
 	
 NUMBER	: [0-9]+ ('.' [0-9]+)?
 		;
+		
+TEXT	: '"' (~["\\] | '\\' .)* '"'
+        ;		
 		
 WS	: (' ' | '\t' | '\n' | '\r') -> skip;
