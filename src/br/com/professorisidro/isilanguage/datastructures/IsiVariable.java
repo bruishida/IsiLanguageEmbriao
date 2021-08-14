@@ -54,6 +54,5 @@ public class IsiVariable extends IsiSymbol {
 		}
 		return false;
 	}
-	
 
 }
