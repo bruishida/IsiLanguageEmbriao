@@ -10,6 +10,7 @@ package br.com.professorisidro.isilanguage.parser;
 	import br.com.professorisidro.isilanguage.ast.CommandLeitura;
 	import br.com.professorisidro.isilanguage.ast.CommandEscrita;
 	import br.com.professorisidro.isilanguage.ast.CommandAtribuicao;
+	import br.com.professorisidro.isilanguage.ast.CommandComentario;
 	import br.com.professorisidro.isilanguage.ast.CommandDecisao;
 	import br.com.professorisidro.isilanguage.ast.CommandEnquanto;
 	import br.com.professorisidro.isilanguage.ast.CommandOpEsp;
@@ -144,6 +145,16 @@ public interface IsiLangListener extends ParseTreeListener {
 	 * @param ctx the parse tree
 	 */
 	void exitCmdselecao(IsiLangParser.CmdselecaoContext ctx);
+	/**
+	 * Enter a parse tree produced by {@link IsiLangParser#cmdcomentario}.
+	 * @param ctx the parse tree
+	 */
+	void enterCmdcomentario(IsiLangParser.CmdcomentarioContext ctx);
+	/**
+	 * Exit a parse tree produced by {@link IsiLangParser#cmdcomentario}.
+	 * @param ctx the parse tree
+	 */
+	void exitCmdcomentario(IsiLangParser.CmdcomentarioContext ctx);
 	/**
 	 * Enter a parse tree produced by {@link IsiLangParser#expr}.
 	 * @param ctx the parse tree
