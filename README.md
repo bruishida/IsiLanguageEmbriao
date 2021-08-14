@@ -27,7 +27,8 @@
  (>{path ate o projeto}/IsiLanguageEmbrião)
 
 ```sh
-java -cp .:antlr-4.7.1-complete.jar org.antlr.v4.Tool IsiLang.g4 -package br.com.professorisidro.isilanguage.parser -o ./src/br/com/professorisidro/isilanguage/parser```
+java -cp .:antlr-4.7.1-complete.jar org.antlr.v4.Tool IsiLang.g4 -package br.com.professorisidro.isilanguage.parser -o ./src/br/com/professorisidro/isilanguage/parser
+```
 
 3-Execute o run na MainClass.java dentro do pacote main
 
