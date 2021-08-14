@@ -20,6 +20,9 @@ enquanto(a < 10){
 	a = a +  1;
 }
 
+d = 25#;
+escreva (d);
+
 para(a de 5 ate 10; a + 1) {
 	escreva(a);
 }

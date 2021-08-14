@@ -16,6 +16,8 @@ a = 5;
 while (a<10) {
 System.out.println(a);a = a+1;
 }
+d = Math.sqrt(25);
+System.out.println(d);
 for (a = 5;a <= 10;a = a+1) {
 System.out.println(a);
 }

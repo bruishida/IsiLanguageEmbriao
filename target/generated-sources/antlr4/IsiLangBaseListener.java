@@ -1,5 +1,4 @@
-// Generated from IsiLang.g4 by ANTLR 4.7.1
-package br.com.professorisidro.isilanguage.parser;
+// Generated from IsiLang.g4 by ANTLR 4.4
 
 	import br.com.professorisidro.isilanguage.datastructures.IsiSymbol;
 	import br.com.professorisidro.isilanguage.datastructures.IsiVariable;
@@ -21,6 +20,7 @@ package br.com.professorisidro.isilanguage.parser;
 
 
 import org.antlr.v4.runtime.ParserRuleContext;
+import org.antlr.v4.runtime.misc.NotNull;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
@@ -35,204 +35,204 @@ public class IsiLangBaseListener implements IsiLangListener {
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterProg(IsiLangParser.ProgContext ctx) { }
+	@Override public void enterCmdattrib(@NotNull IsiLangParser.CmdattribContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitProg(IsiLangParser.ProgContext ctx) { }
+	@Override public void exitCmdattrib(@NotNull IsiLangParser.CmdattribContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDecl(IsiLangParser.DeclContext ctx) { }
+	@Override public void enterTipo(@NotNull IsiLangParser.TipoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDecl(IsiLangParser.DeclContext ctx) { }
+	@Override public void exitTipo(@NotNull IsiLangParser.TipoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterDeclaravar(IsiLangParser.DeclaravarContext ctx) { }
+	@Override public void enterDecl(@NotNull IsiLangParser.DeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitDeclaravar(IsiLangParser.DeclaravarContext ctx) { }
+	@Override public void exitDecl(@NotNull IsiLangParser.DeclContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTipo(IsiLangParser.TipoContext ctx) { }
+	@Override public void enterCmdpara(@NotNull IsiLangParser.CmdparaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTipo(IsiLangParser.TipoContext ctx) { }
+	@Override public void exitCmdpara(@NotNull IsiLangParser.CmdparaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterBloco(IsiLangParser.BlocoContext ctx) { }
+	@Override public void enterCmdescrita(@NotNull IsiLangParser.CmdescritaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitBloco(IsiLangParser.BlocoContext ctx) { }
+	@Override public void exitCmdescrita(@NotNull IsiLangParser.CmdescritaContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmd(IsiLangParser.CmdContext ctx) { }
+	@Override public void enterBloco(@NotNull IsiLangParser.BlocoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmd(IsiLangParser.CmdContext ctx) { }
+	@Override public void exitBloco(@NotNull IsiLangParser.BlocoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmdleitura(IsiLangParser.CmdleituraContext ctx) { }
+	@Override public void enterCmdenquanto(@NotNull IsiLangParser.CmdenquantoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmdleitura(IsiLangParser.CmdleituraContext ctx) { }
+	@Override public void exitCmdenquanto(@NotNull IsiLangParser.CmdenquantoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmdescrita(IsiLangParser.CmdescritaContext ctx) { }
+	@Override public void enterCmdcomentario(@NotNull IsiLangParser.CmdcomentarioContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmdescrita(IsiLangParser.CmdescritaContext ctx) { }
+	@Override public void exitCmdcomentario(@NotNull IsiLangParser.CmdcomentarioContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmdattrib(IsiLangParser.CmdattribContext ctx) { }
+	@Override public void enterCmdselecao(@NotNull IsiLangParser.CmdselecaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmdattrib(IsiLangParser.CmdattribContext ctx) { }
+	@Override public void exitCmdselecao(@NotNull IsiLangParser.CmdselecaoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmdenquanto(IsiLangParser.CmdenquantoContext ctx) { }
+	@Override public void enterProg(@NotNull IsiLangParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmdenquanto(IsiLangParser.CmdenquantoContext ctx) { }
+	@Override public void exitProg(@NotNull IsiLangParser.ProgContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmdpara(IsiLangParser.CmdparaContext ctx) { }
+	@Override public void enterTermo(@NotNull IsiLangParser.TermoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmdpara(IsiLangParser.CmdparaContext ctx) { }
+	@Override public void exitTermo(@NotNull IsiLangParser.TermoContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmdselecao(IsiLangParser.CmdselecaoContext ctx) { }
+	@Override public void enterExpr(@NotNull IsiLangParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmdselecao(IsiLangParser.CmdselecaoContext ctx) { }
+	@Override public void exitExpr(@NotNull IsiLangParser.ExprContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterCmdcomentario(IsiLangParser.CmdcomentarioContext ctx) { }
+	@Override public void enterCmd(@NotNull IsiLangParser.CmdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitCmdcomentario(IsiLangParser.CmdcomentarioContext ctx) { }
+	@Override public void exitCmd(@NotNull IsiLangParser.CmdContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterExpr(IsiLangParser.ExprContext ctx) { }
+	@Override public void enterDeclaravar(@NotNull IsiLangParser.DeclaravarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitExpr(IsiLangParser.ExprContext ctx) { }
+	@Override public void exitDeclaravar(@NotNull IsiLangParser.DeclaravarContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterTermo(IsiLangParser.TermoContext ctx) { }
+	@Override public void enterCmdleitura(@NotNull IsiLangParser.CmdleituraContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitTermo(IsiLangParser.TermoContext ctx) { }
+	@Override public void exitCmdleitura(@NotNull IsiLangParser.CmdleituraContext ctx) { }
 
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void enterEveryRule(ParserRuleContext ctx) { }
+	@Override public void enterEveryRule(@NotNull ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void exitEveryRule(ParserRuleContext ctx) { }
+	@Override public void exitEveryRule(@NotNull ParserRuleContext ctx) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitTerminal(TerminalNode node) { }
+	@Override public void visitTerminal(@NotNull TerminalNode node) { }
 	/**
 	 * {@inheritDoc}
 	 *
 	 * <p>The default implementation does nothing.</p>
 	 */
-	@Override public void visitErrorNode(ErrorNode node) { }
+	@Override public void visitErrorNode(@NotNull ErrorNode node) { }
 }
