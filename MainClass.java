@@ -11,13 +11,11 @@ String  t2;
 a= _key.nextDouble();
 b= _key.nextDouble();
 t1 = "text";
-a = 1+2*3/b;
 a = 5;
+a = 1+2*3/b;
 while (a<10) {
 System.out.println(a);a = a+1;
 }
-d = Math.sqrt(25);
-System.out.println(d);
 for (a = 5;a <= 10;a = a+1) {
 System.out.println(a);
 }
@@ -25,12 +23,13 @@ if (a>b) {
 System.out.println(a);}else {
 System.out.println(b);}
 
+d = Math.sqrt(25);
+System.out.println(d);
 c = 10;
 System.out.println(c);
 c = (10%2);
 System.out.println(c);
 c = Math.pow(10,2);
 System.out.println(c);
-/*jaijd*/
-/*comentario"dassa"123*/
+/*comentario"exemplo"123*/
   }}
