@@ -10,6 +10,7 @@ grammar IsiLang;
 	import br.com.professorisidro.isilanguage.ast.CommandLeitura;
 	import br.com.professorisidro.isilanguage.ast.CommandEscrita;
 	import br.com.professorisidro.isilanguage.ast.CommandAtribuicao;
+	import br.com.professorisidro.isilanguage.ast.CommandComentario;
 	import br.com.professorisidro.isilanguage.ast.CommandDecisao;
 	import br.com.professorisidro.isilanguage.ast.CommandEnquanto;
 	import br.com.professorisidro.isilanguage.ast.CommandOpEsp;
@@ -128,6 +129,7 @@ cmd      :  cmdleitura
          |  cmdselecao  
          |  cmdenquanto
          |  cmdpara
+         |  cmdcomentario
         ;
 		
 cmdleitura	: 'leia' AP
@@ -246,6 +248,16 @@ cmdselecao  :  'se' AP
                    	}
                    )?
             ;
+            
+cmdcomentario : CMTINICIO {_exprContent = "";}
+				(
+					 ID {_exprContent += _input.LT(-1).getText();}
+					|TEXT {_exprContent += _input.LT(-1).getText();}
+					|NUMBER {_exprContent += _input.LT(-1).getText();}
+				)*
+				CMTFINAL {CommandComentario cmd = new CommandComentario(_exprContent);
+                   		stack.peek().add(cmd);}
+			;
 			
 expr		:  termo ( 
 	             OP  { _exprContent += _input.LT(-1).getText();}
@@ -309,7 +321,12 @@ ACH  : '{'
      
 FCH  : '}'
      ;
+     
+CMTINICIO : '['
+	 ;
 	 
+CMTFINAL  : ']'
+		  ;
 	 
 OPREL : '>' | '<' | '>=' | '<=' | '==' | '!='
       ;

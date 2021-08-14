@@ -29,4 +29,6 @@ c = (10%2);
 System.out.println(c);
 c = Math.pow(10,2);
 System.out.println(c);
+/*jaijd*/
+/*comentario"dassa"123*/
   }}
