@@ -9,19 +9,14 @@ leia(a);
 leia(b);
 
 t1="text";
-
+a = 5;
 
 a = 1 + 2 * 3 / b;
-
-a = 5;
 
 enquanto(a < 10){
 	escreva(a);
 	a = a +  1;
 }
-
-d = 25#;
-escreva (d);
 
 para(a de 5 ate 10; a + 1) {
 	escreva(a);
@@ -34,15 +29,16 @@ senao {
 escreva (b);
 }
 
+d = 25#;
+escreva (d);
 
 c = 10;
 escreva (c);
+
 c = 10%2;
 escreva (c);
 c = 10^2;
 escreva (c);
 
-[ jaijd ]
-
-[ comentario "dassa" 123]
+[ comentario "exemplo" 123]
 fimprog;

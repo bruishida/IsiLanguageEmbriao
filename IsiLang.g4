@@ -287,7 +287,6 @@ expr        :  termo
                         isOpEsp=false;
                     }
                     else if(isOpRaiz) {
-                    	System.out.println(_exprContent);
                         CommandRaiz cmd = new CommandRaiz(_exprContent);
                         _exprContent = cmd.generateJavaCode();
                         isOpRaiz=false;
