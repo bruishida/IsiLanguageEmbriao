@@ -18,6 +18,7 @@
 - [x] Comentário
 - [x] Temporizador de compilação
 - [x] Potenciação e resto de divisão
+- [x] Raiz quadrada
 
 ## Getting started
 1 - Adicione o ANTLR jar no Classpath do projeto
