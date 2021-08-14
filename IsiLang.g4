@@ -14,6 +14,7 @@ grammar IsiLang;
 	import br.com.professorisidro.isilanguage.ast.CommandDecisao;
 	import br.com.professorisidro.isilanguage.ast.CommandEnquanto;
 	import br.com.professorisidro.isilanguage.ast.CommandOpEsp;
+	import br.com.professorisidro.isilanguage.ast.CommandRaiz;
 	import br.com.professorisidro.isilanguage.ast.CommandPara;
 	import java.util.ArrayList;
 	import java.util.Stack;
@@ -45,6 +46,7 @@ grammar IsiLang;
 	private String _exprIncrementoFor;
 	private ArrayList<AbstractCommand> listaFor;
 	private boolean isOpEsp = false;
+	private boolean isOpRaiz = false;
 	
 	public void verificaID(String id){
 		if (!symbolTable.exists(id)){
@@ -259,25 +261,41 @@ cmdcomentario : CMTINICIO {_exprContent = "";}
                    		stack.peek().add(cmd);}
 			;
 			
-expr		:  termo ( 
-	             OP  { _exprContent += _input.LT(-1).getText();}
-	             termo
-	             |
-	             OPESP { _exprContent += " ";
+expr        :  termo 
+
+				( 
+                 (OP  { _exprContent += _input.LT(-1).getText();}
+                 termo
+                 )*
+                |
+                 OPESP { _exprContent += " ";
                      _exprContent += _input.LT(-1).getText();
                      _exprContent += " ";
                      isOpEsp=true;
                  }
-        		termo
-	            )*
-	            {
-	            	if(isOpEsp) {
-	            		CommandOpEsp cmd = new CommandOpEsp(_exprContent);
-                    	_exprContent = cmd.generateJavaCode();
-	            	}
-	            }
-	            | TEXT { _exprContent += _input.LT(-1).getText();}
-			; 
+            	termo
+      			|
+                 OPRAIZ {_exprContent += " ";
+                 	_exprContent += _input.LT(-1).getText();
+                     isOpRaiz=true;
+                 }
+                )
+                {
+                    if(isOpEsp) {
+                        CommandOpEsp cmd = new CommandOpEsp(_exprContent);
+                        _exprContent = cmd.generateJavaCode();
+                        isOpEsp=false;
+                    }
+                    else if(isOpRaiz) {
+                    	System.out.println(_exprContent);
+                        CommandRaiz cmd = new CommandRaiz(_exprContent);
+                        _exprContent = cmd.generateJavaCode();
+                        isOpRaiz=false;
+                    }
+                }
+                | TEXT { _exprContent += _input.LT(-1).getText();}
+                
+                ;
 			
 termo		: ID { verificaID(_input.LT(-1).getText());
 	               _exprContent += _input.LT(-1).getText();
@@ -310,6 +328,9 @@ OP	: '+' | '-' | '*' | '/'
 OPESP :    '%' | '^' 
       ;
 	
+OPRAIZ : '#'
+       ;
+       
 ATTR : '='
 	 ;
 	 
