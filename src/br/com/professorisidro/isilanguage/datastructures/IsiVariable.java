@@ -1,5 +1,7 @@
 package br.com.professorisidro.isilanguage.datastructures;
 
+import br.com.professorisidro.isilanguage.exceptions.IsiSemanticException;
+
 public class IsiVariable extends IsiSymbol {
 	
 	public static final int NUMBER=0;
@@ -29,7 +31,15 @@ public class IsiVariable extends IsiSymbol {
 	}
 
 	public void setValue(String value) {
-		this.value = value;
+		try {
+			if(getType() == NUMBER) {
+				double str1 = Double.parseDouble(value); 
+			}
+			this.value = value;
+		} catch (Exception ex) {
+			throw new IsiSemanticException("The attribute "+value+" is not a number");
+		}
+		
 	}
 
 	@Override
